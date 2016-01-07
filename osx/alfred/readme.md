@@ -1,46 +1,40 @@
+## Alfred workflows
+
 Some random alfred workflows, downloaded from the interwebs, some customized.
 
-Network:
-    ipi - show internal ip
-    ipe - show external ip
-    ifs - show up interfaces
-    ping <host> - pings and copies to clipboard
-    nslookup <host> - and copies ip to clipboard
+### Network
+src: http://www.packal.org/workflow/network-tools (added ipi, ipe and ifs command)
+* ipi - show internal ip 
+* ipe - show external ip 
+* ifs - show up interfaces 
+* ping - pings and copies to clipboard nslookup - and copies ip to clipboard
+* nslookup - looks up a host and copies the ip to the clipboard
 
-System:
-    top to show top processes, m or c flag is also ok
+### System
+* top to show top processes, m or c flag is also ok (https://github.com/zhaocai/alfred2-top-workflow)
 
-Files:
-    f to search paths in home folder (simple folders filter)
-        press cmd + down to browse folder;
-        press shift to quicklook
-        press right arrow to show possible actions over file
-        https://github.com/zhaocai/alfred2-top-workflow
+### Files
+* f to search paths in home folder (simple folders filter); press cmd + down to browse folder; press shift to quicklook press right arrow to show possible actions over file https://github.com/zhaocai/alfred2-top-workflow
+* Recent files: r
+* Finder/Terminal: ft - open current finder in terminal
 
-subl to open folder in sublime
+### Applications
+* Sublime text: subl to open folder in sublime; adds open with option (https://github.com/franzheidl/alfred-workflows/tree/master/open-with-sublime-text)
+* Dash: ex. akka search using installed docsets.
 
-Conversions:
-    conv 100 usd eur
+### Misc
+* Conversions for several units, eg. conv 100 usd eur (https://github.com/deanishe/alfred-convert)
+* Timer, eg timer 5s wakeup! (http://www.packal.org/workflow/simple-timer)
+* Stack overflow: .so (https://github.com/deanishe/alfred-stackoverflow)
 
-Dash:
-    ex. akka
-    search using installed docsets. Requires dash
+##### Scratchpad 
+Requires that the path ~/scratchpad/scratchpad.txt exists.
 
-Recent files:
-    r
+Press hotkey cmd + shift + s with text selected and text can be edited on the command line. Then:
+* Press enter - text will go the clipboard
+* Press <cmd> and enter - text will go into the clipboard and the top most application.and this
+* Press <ctrl> and enter - the text will be prepended (customized from appended) to the end of a selected text file.
 
-timer:
-    timer 5s <msg>
+Write "sp:" or if you press the hotkey without a selection, it will offer to put the clipboard as the text to edit.
 
-Stack overflow:
-    .so <query>
-
-Finder/Terminal:
-    ft - open current finder in terminal
-
-Scratchpad:
-        After you set a hotkey, you can select text and edit it on the Alfred command line. When you press enter, it will be placed into the clipboard.
-        If you press <cmd> and enter, it will place it into the clipboard and the top most application.and this
-        If you press <ctrl> and enter, the text will be preppended (changed from appended) to the end of a selected text file.
-        If you invoke the keyword “sp:” or if you press the hotkey without a selection, it will offer to put the clipboard as the text to edit. Press enter on the “clipboard” option and the contents of the clipboard will be copied to the Alfred command line for editing.
-        Cmd + shift + s to directly open the scratchpad file (created the path ~/scratchpad/scratchpad.txt) and set file as scratchpad. It uses mvim and a custom profile: /usr/local/bin/mvim -u ~/.vimrc.distractionfree -- ~/scratchpad/scratchpad.txt
+Cmd + shift + s to directly open the scratchpad file. It uses mvim and a custom profile: /usr/local/bin/mvim -u ~/.vimrc.distractionfree -- ~/scratchpad/scratchpad.txt
