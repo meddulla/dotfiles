@@ -1,0 +1,35 @@
+APPS
+
+Command-line installs
+    brew
+
+System
+    Alfred2
+        workflows at alfred/workflows
+    iTerm2
+    Keyboard
+        Karabiner
+        Seil
+
+
+Editors & code
+    MacVim
+        and spf13       
+        curl https://raw.githubusercontent.com/spf13/spf13-vim/3.0/bootstrap.sh -L -o - | sh
+
+    SublimeText
+    IntellijIdea
+    Dash
+
+Cloud
+    Dropbox
+    Meocloud
+
+Music
+    Spotify
+
+DevOps
+    Vagrant
+    VirtualBox
+    Docker
+
