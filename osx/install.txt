@@ -10,6 +10,12 @@ System
     Keyboard
         Karabiner
         Seil
+    nvALT - set to save as plain text files in ~/scratchpad
+    Shortcat (also browses webpages in safari)
+    Malware & uninstalls
+        App Cleaner
+        Onyx
+        Sopho
 
 
 Editors & code
