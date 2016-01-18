@@ -1,1 +1,52 @@
-/Users/sofiacardita/.vimrc.local
+set guifont=Menlo:h13
+map <D-e> :NERDTreeToggle<CR>:NERDTreeMirror<CR>
+"" display text as wrapped
+set wrap
+
+"" sets ,m mapping to toggle task status in .tasks files
+"" same as in vimwiki
+""nmap <silent> <buffer> <Leader>m :call Toggle_task_status()<CR>
+nmap <Leader>m :call Toggle_task_status()<CR>
+
+" F5 opens current buffer's folder in Finder, selecting the current file
+" if it exists. Works for both directories and files.
+map <F5> :silent execute '![ -f "%:p" ] && open -R "%:p" \|\| open "%:p:h"'<CR>
+
+"" change path of vimwiki html pages to 
+let g:vimwiki_list = [{'path': '~/vimwiki/',
+                       \ 'path_html': '~/vimwiki/html/'}]
+
+Plugin 'weierophinney/vimwiki'
+Plugin 'samsonw/vim-task'
+Plugin 'https://github.com/powerline/powerline'
+Plugin 'L9'
+Plugin 'FuzzyFinder'
+
+"highlighted words"
+match Todo /todo/
+match Todo /FIX/
+match Todo /DOC/
+match Todo /NOTE/
+
+"ctrl + s"
+:nmap <c-s> :w<CR>
+:imap <c-s> <Esc>:w<CR>a
+:imap <c-s> <Esc><c-s>
+
+"paste"
+vmap <C-c> "+yi
+vmap <C-x> "+c
+vmap <C-v> c<ESC>"+p
+imap <C-v> <C-r><C-o>+
+
+"fuzzy finder
+map <Leader>l :FufBuffer<CR>
+
+imap jj <Esc>
+
+"map tab to indent/unindent"
+nnoremap <Tab> >>
+nnoremap <S-Tab> <<
+
+"start"
+cd ~/work
