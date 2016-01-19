@@ -25,3 +25,5 @@
     stash-rename = "!_() { rev=$(git rev-parse $1) && git stash drop $1 || exit 1 ; git diff-index --quiet HEAD; s=$?; [ $s != 0  ] && git stash save \"tmp stash from stash-rename\"; git stash apply $rev && shift && git stash save \"$@\" && [ $s != 0  ] && git stash pop stash@{1};  }; _"
     td =  !sh -c 'git rev-parse "$@" | xargs git cat-file -p ' --
     tdd =  !sh -c 'git rev-parse "$@" | xargs git cat-file -p | grep \">\" | cut -d \">\" -f2 | cut -d \" \" -f2 | xargs -I % date -d @% ' --
+[include]
+        path = ~/.gitconfiguser
