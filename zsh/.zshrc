@@ -54,7 +54,7 @@ alias x=pbcopy
 # vim
 alias vi=vim
 # pretty vim
-alias mvimf="/usr/local/bin//mvim -u ~/.vimrc.distractionfree -- "
+#alias mvimf="/usr/local/bin//mvim -u ~/.vimrc.distractionfree -- "
 
 # work paths
 alias work="cd ~/work"
