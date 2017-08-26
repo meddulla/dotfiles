@@ -1,0 +1,10 @@
+
+Plugin 'weierophinney/vimwiki'
+Plugin 'samsonw/vim-task'
+Plugin 'https://github.com/powerline/powerline'
+Plugin 'L9'
+Plugin 'FuzzyFinder'
+Plugin 'jeffkreeftmeijer/vim-numbertoggle'
+Plugin 'idris-hackers/idris-vim.git'
+Plugin 'farseer90718/vim-taskwarrior'
+

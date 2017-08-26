@@ -11,21 +11,17 @@ System
         Karabiner
         Seil
     nvALT - set to save as plain text files in ~/scratchpad
-    Shortcat (also browses webpages in safari)
-    Malware & uninstalls
-        App Cleaner
-        Onyx
-        Sopho
+    Hammerspoon
+    taskwarrior +tasknote script in /usr/local/bin; set to save in ~/.task
 
 
 Editors & code
     MacVim
-        and spf13       
+        and spf13
         curl https://raw.githubusercontent.com/spf13/spf13-vim/3.0/bootstrap.sh -L -o - | sh
 
     SublimeText
     IntellijIdea
-    Dash
 
 Cloud
     Dropbox

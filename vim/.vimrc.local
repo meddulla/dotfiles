@@ -1,3 +1,8 @@
+syntax on
+filetype on
+filetype plugin indent on
+
+
 set guifont=Menlo:h13
 map <D-e> :NERDTreeToggle<CR>:NERDTreeMirror<CR>
 "" display text as wrapped
@@ -16,11 +21,6 @@ map <F5> :silent execute '![ -f "%:p" ] && open -R "%:p" \|\| open "%:p:h"'<CR>
 let g:vimwiki_list = [{'path': '~/vimwiki/',
                        \ 'path_html': '~/vimwiki/html/'}]
 
-Plugin 'weierophinney/vimwiki'
-Plugin 'samsonw/vim-task'
-Plugin 'https://github.com/powerline/powerline'
-Plugin 'L9'
-Plugin 'FuzzyFinder'
 
 "highlighted words"
 match Todo /todo/

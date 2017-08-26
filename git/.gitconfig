@@ -6,24 +6,41 @@
 [core]
     trustctime = false
     excludesfile = ~/.gitignore
+	editor = /Applications/MacVim.app/Contents/MacOS/Vim
 [log]
     decorate = true
 [alias]
     s = status
     co = checkout
+    gl = log --oneline --decorate
+    hist = log --color --pretty=format:\"%C(yellow)%h%C(reset) %s%C(bold red)%d%C(reset) %C(green)%ad%C(reset) %C(blue)[%an]%C(reset)\" --relative-date --decorate
     glog = log --graph --pretty=format:'%Cred%h%Creset - %Cred%an%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr)%Creset' --abbrev-commit --date=relative
     blog = log --graph --full-history --all --color --pretty=format:'%x1b[31m%h%x09%x1b[32m%d%x1b[0m%x20%s' --simplify-by-decoration
-    wc = whatchanged --pretty=format:'%Cred%h%Creset | %C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue) <%an>%Creset' --abbrev-commit --date=short --name-status]]]'
+    wc = whatchanged --pretty=format:'%Cred%h%Creset | %C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue) <%an>%Creset' --abbrev-commit --date=short --name-status
     diffs = diff --staged
     diffe = !sh -c 'git diff --name-only | grep -v "$@" | xargs -t  git diff ' --
     commita = commit --amend
     diffw = diff -w --word-diff=color --word-diff-regex='(\\w+|.)'
     diffsw = diff --staged -w --word-diff=color --word-diff-regex='(\\w+|.)'
+    logw = log -p -w --word-diff=color --word-diff-regex='(\\w+|.)'
     showw = show -w --word-diff=color --word-diff-regex='(\\w+|.)'
     addnw = !sh -c 'git diff -w --no-color "$@" | git apply --cached --ignore-whitespace' -
     unstage = reset HEAD
     stash-rename = "!_() { rev=$(git rev-parse $1) && git stash drop $1 || exit 1 ; git diff-index --quiet HEAD; s=$?; [ $s != 0  ] && git stash save \"tmp stash from stash-rename\"; git stash apply $rev && shift && git stash save \"$@\" && [ $s != 0  ] && git stash pop stash@{1};  }; _"
     td =  !sh -c 'git rev-parse "$@" | xargs git cat-file -p ' --
     tdd =  !sh -c 'git rev-parse "$@" | xargs git cat-file -p | grep \">\" | cut -d \">\" -f2 | cut -d \" \" -f2 | xargs -I % date -d @% ' --
+    # current tag
+    ctag = describe --abbrev=0 --tags
+    # previous tag
+    ptag = !sh -c 'git log --tags --no-walk --pretty="format:%d" | head -n2 | tail -n1 | cut -d\" \" -f3 | cut -d \")\" -f1'
+    # no need to to set upstream
+    pushup = "!git push --set-upstream origin $(git symbolic-ref --short HEAD)"
+
 [include]
-        path = ~/.gitconfiguser
+    path = ~/.gitconfiguser
+[diff]
+    tool = icdiff
+[difftool]
+    prompt = false
+[difftool "icdiff"]
+    cmd = /usr/local/bin/icdiff --line-numbers $LOCAL $REMOTE
